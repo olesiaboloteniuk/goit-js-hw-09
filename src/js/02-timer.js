@@ -20,10 +20,10 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-		window.alert('Please choose a date in the future');
+		alert('Please choose a date in the future');
 		return
     }
-    buttonStart.disabled = false;
+   buttonStart.disabled = false;
   },
 };
 
@@ -55,7 +55,8 @@ function convertMs(ms) {
 function startTime() {
   setInterval(() => {
     const timer = new Date(input.value) - new Date();
-    if (timer < 0) {
+	  if (timer < 0) {
+		  
       return;
     }
     const { days, hours, minutes, seconds } = convertMs(timer);
@@ -65,5 +66,7 @@ function startTime() {
     sec.textContent = seconds;
   }, 1000);
 }
+
+
 
 buttonStart.addEventListener('click', startTime);
