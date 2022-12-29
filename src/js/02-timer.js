@@ -53,6 +53,7 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 function startTime() {
+input.setAttribute("disabled", true);
   setInterval(() => {
     const timer = new Date(input.value) - new Date();
 	  if (timer < 0) {
